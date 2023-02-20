@@ -13,7 +13,7 @@ const router = createRouter({
         {
             path: "/quiz/:id",
             name: 'quiz',
-            component: QuizView
+            component: QuizView 
         }
     ]
 
