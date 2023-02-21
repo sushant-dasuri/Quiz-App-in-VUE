@@ -1,14 +1,21 @@
+<script setup>
+import {defineProps} from "vue";
+const {question, quiz} = defineProps(['question','quiz']);
+const quizType = parseInt(quiz.id) === 1 ? true : false;
+</script>
+
 <template>
     <div class="question-container">
-            <h1 class="question">
-                What is the chemical value of the salt?
+            <img v-if="quizType" :src="question.text" />
+            <h1 v-else class="question">
+               {{question.text}}
             </h1>
         </div>
         <div class="options-container">
-            <div class="option">
-                <p class="option-label">A</p>
+            <div v-for="option in question.options" :key="option.id" class="option">
+                <p class="option-label">{{option.label}}</p>
                 <div class="option-value">
-                    <p>NaCl</p>
+                    <p>{{option.text}}</p>
                 </div>
             </div>
         </div>
