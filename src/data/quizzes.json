@@ -10,16 +10,19 @@
                 "options":[
                     {
                         "id":1,
+                        "label": "A",
                         "text": "dog and cat",
                         "isCorrect":true
                     },
                     {
                         "id":2,
+                        "label": "B",
                         "text": "dog end cet",
                         "isCorrect":false
                     },
                     {
                         "id":3,
+                        "label": "C",
                         "text": "dug and cet",
                         "isCorrect":false
                     }
@@ -31,16 +34,19 @@
                 "options":[
                     {
                         "id":1,
+                        "label": "A",
                         "text": "plane",
                         "isCorrect":true
                     },
                     {
                         "id":2,
+                        "label": "B",
                         "text": "plan",
                         "isCorrect":false
                     },
                     {
                         "id":3,
+                        "label": "C",
                         "text": "pleen",
                         "isCorrect":false
                     }
@@ -52,16 +58,19 @@
                 "options":[
                     {
                         "id":1,
+                        "label": "A",
                         "text": "plant",
                         "isCorrect":true
                     },
                     {
                         "id":2,
+                        "label": "B",
                         "text": "planet",
                         "isCorrect":false
                     },
                     {
                         "id":3,
+                        "label": "C",
                         "text": "plat",
                         "isCorrect":false
                     }
@@ -73,16 +82,19 @@
                 "options":[
                     {
                         "id":1,
+                        "label": "A",
                         "text": "three shells",
                         "isCorrect":true
                     },
                     {
                         "id":2,
+                        "label": "B",
                         "text": "thre shells",
                         "isCorrect":false
                     },
                     {
                         "id":3,
+                        "label": "C",
                         "text": "tree shalls",
                         "isCorrect":false
                     }
@@ -94,16 +106,19 @@
                 "options":[
                     {
                         "id":1,
+                        "label": "A",
                         "text": "red cup",
                         "isCorrect":true
                     },
                     {
                         "id":2,
+                        "label": "B",
                         "text": "red cop",
                         "isCorrect":false
                     },
                     {
                         "id":3,
+                        "label": "C",
                         "text": "rad cop",
                         "isCorrect":false
                     }
