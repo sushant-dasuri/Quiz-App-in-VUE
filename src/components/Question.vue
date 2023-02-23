@@ -19,10 +19,20 @@ const quizType = parseInt(quiz.id) === 1 ? true : false;
                 </div>
             </div>
         </div>
+        
 </template>
 <style scoped>
 .question-container {
     margin-top: 20px;
+}
+
+.question-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    padding: 15px;
+    border: 1px solid #a0a0a0;
+    margin: 0px 15px 15px 15px;
 }
 
 .question {
