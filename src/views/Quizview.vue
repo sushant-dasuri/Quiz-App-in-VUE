@@ -1,6 +1,7 @@
 <script setup>
 import Question from "../components/Question.vue";
 import QuizHeader from "../components/QuizHeader.vue";
+import Result from "../components/Result.vue";
 import {useRoute} from "vue-router";
 import quizzes from "../data/quizzes.json";
 import { ref, watch, computed } from "vue";
@@ -9,6 +10,7 @@ const route = useRoute();
 const quizId = parseInt(route.params.id);
 const quiz = quizzes.find(q => q.id === quizId);
 const currentQuestionIndex = ref(0);
+const noOfCorrectAnswers = ref(0);
 /* const questionStatus = ref(`${currentQuestionIndex.value}/${quiz.questions.length}`)
 
 watch(() => currentQuestionIndex.value, () => {
@@ -17,6 +19,13 @@ watch(() => currentQuestionIndex.value, () => {
 
 const questionStatus = computed(() => `${currentQuestionIndex.value}/${quiz.questions.length}`);
 const barPercentage = computed(() => `${currentQuestionIndex.value / quiz.questions.length * 100}%`);
+const selectOption = (isCorrect) => {
+    if(isCorrect) {
+        noOfCorrectAnswers.value++;
+    }
+    currentQuestionIndex.value++;
+}
+
 
 </script>
 
@@ -25,7 +34,8 @@ const barPercentage = computed(() => `${currentQuestionIndex.value / quiz.questi
     :questionStatus="questionStatus"
     :barPercentage="barPercentage" />
     <div>
-        <Question :question= "quiz.questions[currentQuestionIndex]" :quiz= "quiz" />
+        <Question :question= "quiz.questions[currentQuestionIndex]" :quiz= "quiz" @selectOption="selectOption" />
+        <Result />
     </div>
-    <button @click="currentQuestionIndex++">Next</button>
+
 </template>
