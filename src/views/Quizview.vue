@@ -11,6 +11,7 @@ const quizId = parseInt(route.params.id);
 const quiz = quizzes.find(q => q.id === quizId);
 const currentQuestionIndex = ref(0);
 const noOfCorrectAnswers = ref(0);
+const showResult = ref(false);
 /* const questionStatus = ref(`${currentQuestionIndex.value}/${quiz.questions.length}`)
 
 watch(() => currentQuestionIndex.value, () => {
@@ -23,6 +24,10 @@ const selectOption = (isCorrect) => {
     if(isCorrect) {
         noOfCorrectAnswers.value++;
     }
+
+    if(quiz.questions.length - 1 === currentQuestionIndex.value) {
+        showResult.value = true;
+    }
     currentQuestionIndex.value++;
 }
 
@@ -34,8 +39,8 @@ const selectOption = (isCorrect) => {
     :questionStatus="questionStatus"
     :barPercentage="barPercentage" />
     <div>
-        <Question :question= "quiz.questions[currentQuestionIndex]" :quiz= "quiz" @selectOption="selectOption" />
-        <Result />
+        <Question v-if="!showResult" :question= "quiz.questions[currentQuestionIndex]" :quiz= "quiz" @selectOption="selectOption" />
+        <Result v-else :quizQuestionLength="quiz.questions.length" :numberOfCorrectAnswers="noOfCorrectAnswers" />
     </div>
 
 </template>

@@ -1,10 +1,15 @@
+<script setup>
+import {defineProps} from "vue"
+
+const {numberOfCorrectAnswers, quizQuestionLength} = defineProps(['numberOfCorrectAnswers', 'quizQuestionLength']);
+</script>
 <template>
     <div class="results">
         <p>
            Your Results...
         </p>
         <h1>
-            4/8
+            {{numberOfCorrectAnswers}}/{{quizQuestionLength}}
         </h1>
     </div>
 </template>
